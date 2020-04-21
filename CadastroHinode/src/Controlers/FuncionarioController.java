@@ -15,7 +15,7 @@ public class FuncionarioController implements ActionListener {
 	private JTextField textMatricula;
 	private Funcionario lerFuncionario;
 	
-	ArrayList<Funcionario> LerFuncionario = new ArrayList();
+	ArrayList<Funcionario> lista = new ArrayList();
     Random num = new Random();
 	
 	
@@ -41,16 +41,14 @@ public class FuncionarioController implements ActionListener {
 			break;
 		case "Cadastrar" : this.cadastrarFuncionario();
 			break;
-		case "Sortear" : if(lerFuncionario.size()<= 2){
+		case "Sortear" : if(lista.size()<= 2){
             				JOptionPane.showMessageDialog(null,"NÃO POSSUI FUNCIONARIOS SUFICIENTE CADASTRADOS");
 						 }
         				else{
-        					JOptionPane.showMessageDialog(null,lerFuncionario.get(num.nextInt(lerFuncionario.size())).toString());
+        					JOptionPane.showMessageDialog(null,lista.get(num.nextInt(lista.size())).toString());
         				 }
         	break;
 			
-			this.sortearFuncionario();	
-		
 		}
 	}
 	
